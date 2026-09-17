@@ -1,0 +1,11 @@
+2026/09/10 12:05:24 Micro started
+2026/09/10 12:05:24 ONBUFFEROPEN unknown
+2026/09/10 12:05:24 ONBUFFEROPEN unknown
+2026/09/10 12:05:24 ONBUFFEROPEN ocaml
+2026/09/10 12:05:24 Server Options map[1:rust=rust-analyzer 2:ocaml=ocamllsp 3:python=pylsp 4:go=gopls 5:typescript=deno lsp 6:javascript=deno lsp 7:markdown=deno lsp 8:json=deno lsp 9:jsonc=deno lsp 10:rust=rls 11:lua=lua-lsp 12:c++=clangd]
+2026/09/10 12:05:24 Starting server ocaml
+2026/09/10 12:05:24 ONEXIT ocaml 
+2026/09/10 12:07:18 tcell event error:  read /dev/tty: file already closed
+2026/09/10 12:08:02 tcell event error:  read /dev/tty: file already closed
+2026/09/10 12:10:26 tcell event error:  read /dev/tty: file already closed
+2026/09/10 12:10:41 tcell event error:  read /dev/tty: file already closed

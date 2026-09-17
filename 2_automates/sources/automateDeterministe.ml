@@ -45,9 +45,19 @@ let affiche_automate (a : 'a t) (print_lettre : 'a -> unit) : unit =
 let affiche_automate_char (a : 'a t) : unit = affiche_automate a print_char
 
 
-let vers_graphe (a : 'a t) : Graphe.graphe = [||]  (* TODO *)
+let vers_graphe (a : 'a t) : Graphe.graphe =
+let {nb=n;sigma=s;delta=d} = a in
+Array.init n (fun i->
+		List.map (fun a-> let Some(x)=a in x)
+		(List.filter (fun l-> match l with |None -> false |_->true)
+			(List.init 
+				(Array.length s) 
+				(fun j-> Hashtbl.find_opt d (i,s.(j)))
+			)
+		)
+)
 
-let accessible (a : 'a t) : bool array = [||]  (* TODO *)
+let accessible (a : 'a t) : bool array = Graphe.parcours (vers_graphe a) [0]
 
 let coaccessible (a : 'a t) : bool array = [||]  (* TODO *)
 

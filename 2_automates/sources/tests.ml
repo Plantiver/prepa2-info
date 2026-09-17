@@ -21,11 +21,13 @@ let _ =
 	AutomateDeterministe.ajouter_transition a0 5 'a' 5;
 	AutomateDeterministe.ajouter_transition a0 5 'b' 1
 
+(*
 let _ = 
 	let accessibles = AutomateDeterministe.accessible a0 in
 	for i = 0 to a0.nb - 1 do
 		Printf.printf "%d est %s accessible\n" i (if accessibles.(i) then "" else "non ")
 	done
+*)
 
 (* Exemple : automate a0 *)
 let (a1 : char AutomateAsynchrone.t) = {
@@ -43,9 +45,32 @@ let _ =
 	AutomateAsynchrone.ajouter_transition a1 1 'a' 2;
 	AutomateAsynchrone.ajouter_transition a1 1 'b' 2;
 	AutomateAsynchrone.ajouter_transition a1 2 'a' 1
-
+(*
 let _ = 
 	let accessibles = AutomateAsynchrone.accessible a1 in
 	for i = 0 to a1.nb - 1 do
 		Printf.printf "%d est %s accessible\n" i (if accessibles.(i) then "" else "non ")
 	done
+*)
+
+
+(*a2*)
+let (a2:char Automate.t) = {
+	nb = 4;
+	sigma = [|'a';'b'|];
+	i = [0;1];
+	f = [2];
+	delta= Hashtbl.create 1
+}
+
+let _ =
+	Automate.ajouter_transition a2 0 'b' 1;
+	Automate.ajouter_transition a2 0 'b' 2;
+	Automate.ajouter_transition a2 1 'a' 2;
+	Automate.ajouter_transition a2 1 'b' 3;
+	Automate.ajouter_transition a2 2 'a' 0;
+	Automate.ajouter_transition a2 2 'a' 2;
+	Automate.ajouter_transition a2 2 'b' 3;
+	Automate.ajouter_transition a2 3 'b' 1;
+	Automate.ajouter_transition a2 3 'b' 2
+
